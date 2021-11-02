@@ -1,0 +1,18 @@
+{
+  "name": "gakachu",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "axios": "^0.24.0",
+    "gridsome": "^0.7.0",
+    "vue-spinner": "^1.0.4",
+    "vue-spinners-css": "^1.1.5"
+  },
+  "devDependencies": {
+    "vue-template-compiler": "^2.6.14"
+  }
+}
