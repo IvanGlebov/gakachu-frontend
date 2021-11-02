@@ -17,6 +17,5 @@ jobs:
       
       - name: Install all packages and run build
         run: |
-          sudo npm install --global @gridsome/cli
-          npm ci
-          gridsome build
+          sudo yarn install 
+          yarn build
