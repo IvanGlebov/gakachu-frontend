@@ -12,6 +12,8 @@ To run project in development mode you should type `yarn develop` inside project
 
 To build project you should type `yarn build` inside porject folder root
 
+After build is completed site files would be located inside `dist` folder
+
 ## Project information
 
 ### Frameworks
