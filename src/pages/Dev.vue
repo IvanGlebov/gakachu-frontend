@@ -23,21 +23,48 @@
       <div class="buttons">
         <div class="buttonWithDescription">
           <button @click="moveUp">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 10l7-7m0 0l7 7m-7-7v18"
+              />
             </svg>
             <div>Up</div>
-            </button>
+          </button>
           <div>+0,01</div>
         </div>
         <div class="buttonWithDescription">
           <button @click="moveDown">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
             </svg>
             <div>Down</div>
-            </button>
+          </button>
           <div>-0,01</div>
+        </div>
+        <div class="buttonWithDescription buttonMoveLeft">
+          <button @click="testPosition">
+            <div>Test</div>
+          </button>
         </div>
       </div>
     </div>
@@ -45,25 +72,33 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
   setup() {},
   methods: {
     moveUp() {
       axios({
-        method: 'GET',
-        url: 'http://localhost:5000/brush_raise'
+        method: "GET",
+        url: "http://localhost:5000/brush_raise",
       })
-      .then((res) => console.log(res))
-      .catch((e) => console.log(e))
+        .then((res) => console.log(res))
+        .catch((e) => console.log(e));
     },
     moveDown() {
       axios({
-        method: 'GET',
-        url: 'http://localhost:5000/brush_lower'
+        method: "GET",
+        url: "http://localhost:5000/brush_lower",
       })
-      .then((res) => console.log(res))
-      .catch((e) => console.log(e))
+        .then((res) => console.log(res))
+        .catch((e) => console.log(e));
+    },
+    testPosition() {
+      axios({
+        method: "GET",
+        url:"http://localhost:5000/test_brush_position"
+      })
+      .then(res => console.log(res))
+      .catch(e => console.log(e))
     }
   },
   metaInfo: {
@@ -114,6 +149,15 @@ button svg {
   display: flex;
   align-items: center;
   gap: 30px;
+}
+.buttonMoveLeft {
+  margin-left: -80px;
+}
+
+.buttonMoveLeft button {
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .devHeader {

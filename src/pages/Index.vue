@@ -43,7 +43,7 @@ export default {
     sendWord() {
       if (this.word !== "") {
         axios({
-          method: "GET",
+          method: "POST",
           url: "http://localhost:5000/send_word",
           data: {
             word: this.word,
