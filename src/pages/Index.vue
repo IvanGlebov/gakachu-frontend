@@ -1,7 +1,7 @@
 <template>
   <Layout class="fullWrapper">
     <h1>Gakachu</h1>
-    <a class="devLink" href="/Dev">Dev settings</a>
+    <a class="devLink" href="/dev">Dev settings</a>
 
     <div class="mainButtonWrapper">
       <input
@@ -50,7 +50,7 @@ export default {
           },
         })
           .then((res) => {
-            if (res.status === "OK")
+            if (res.data.status === "OK")
               window.location.href = "http://localhost/Loading";
             else {
               this.error = "Something has gone wrong on server. Try again.";
