@@ -51,7 +51,7 @@ export default {
         })
           .then((res) => {
             if (res.data.status === "OK")
-              window.location.href = "/Loading";
+              window.location.href = "http://localhost:8080/Loading";
             else {
               this.error = "Something has gone wrong on server. Try again.";
             }
