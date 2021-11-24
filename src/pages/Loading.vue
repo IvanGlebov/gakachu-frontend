@@ -28,7 +28,7 @@ export default {
                 .then((res) => {
                     if (res.data.status === 'available'){
                         clearInterval(this.timerID)
-                        window.location.href='http://localhost/'
+                        window.location.href='http://localhost:8080/'
                     }
                 })
             }, 1000)
