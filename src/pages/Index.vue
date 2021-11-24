@@ -25,7 +25,7 @@ import axios from "axios";
 
 export default {
   metaInfo: {
-    title: "Index",
+    title: "Enter a word",
   },
   data: () => {
     return {
@@ -51,7 +51,7 @@ export default {
         })
           .then((res) => {
             if (res.data.status === "OK")
-              window.location.href = "http://localhost/Loading";
+              window.location.href = "/Loading";
             else {
               this.error = "Something has gone wrong on server. Try again.";
             }
@@ -105,7 +105,6 @@ export default {
 }
 
 .mainInput {
-  /* border: none; */
   font-size: 20pt;
   border: solid 1px black;
   padding: 15px;
