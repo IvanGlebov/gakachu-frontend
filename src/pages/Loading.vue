@@ -2,6 +2,10 @@
     <Layout class='wrapper'>
         <div>Wait untill robot is free again</div>
         <fade-loader :color="'#110100'"></fade-loader>
+        <div class="imgWrapper">
+          <div>Here will be an image of current painting</div>
+          <img class="currImage" src="/qr.png" alt=""/>
+        </div>
     </Layout>
 </template>
 
@@ -44,11 +48,25 @@ export default {
 </script>
 <style scoped>
     .wrapper {
-        height: 80vh;
+        height: 100vh;
         gap: 100px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .imgWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      justify-content: center;
+      align-items: center;
+    }
+    img {
+      border: none;
+    }
+    .currImage {
+      width: 700px;
+      max-height: 500px;
     }
 </style>
