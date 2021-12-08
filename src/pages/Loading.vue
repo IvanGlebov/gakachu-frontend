@@ -32,7 +32,7 @@ export default {
                 .then((res) => {
                     if (res.data.status === 'available'){
                         clearInterval(this.timerID)
-                        window.location.href='/'
+                        window.location.href='/drawing-finished'
                     }
                 })
             }, 1000)
