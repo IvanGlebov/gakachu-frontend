@@ -4,7 +4,7 @@
         <fade-loader :color="'#110100'"></fade-loader>
         <div class="imgWrapper">
           <div>Here will be an image of current painting</div>
-          <img class="currImage" src="/qr.png" alt=""/>
+          <img class="currImage" src="/pic.png" alt=""/>
         </div>
     </Layout>
 </template>
