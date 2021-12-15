@@ -7,7 +7,7 @@
       <g-link to='/' class="submitButton">Go to main</g-link>
     </div>
     <div>Scan QR code to find out more</div>
-    <g-image class="qrCode" src="/qr.png"/>
+    <g-image class="qrCode" src="http://localhost:5000/qr"/>
   </div>
 </template>
 
