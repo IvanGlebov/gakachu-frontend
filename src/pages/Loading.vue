@@ -1,10 +1,10 @@
 <template>
     <Layout class='wrapper'>
-        <div>Wait untill robot is free again</div>
+        <div>Wait until robot is free again</div>
         <fade-loader :color="'#110100'"></fade-loader>
         <div class="imgWrapper">
-          <div>Here will be an image of current painting</div>
-          <img class="currImage" src="http://localhost:5000/picture" alt=""/>
+          <div v-if="!imgStatus">Here will be an image of current painting</div>
+          <img v-if="imgStatus" class="currImage" src="http://localhost:5000/picture" alt=""/>
         </div>
     </Layout>
 </template>
@@ -19,7 +19,8 @@ export default {
     data: () => {
         return ({
             timerID: '',
-            status: ''
+            imgTimer: '',
+            imgStatus: '',
         })
     },
     methods: {
@@ -36,10 +37,23 @@ export default {
                     }
                 })
             }, 1000)
+        },
+        checkIfImageExists(url) {
+          const img = new Image()
+          img.src = url
+          if (img.complete) {
+            this.$data.imgStatus = true
+            clearInterval(this.$data.imgTimer)
+          } else {
+            this.$data.imgStatus = false
+          }
         }
     },
     mounted() {
-        this.startWaterfall()
+      this.startWaterfall()
+      setInterval(() => {
+        this.checkIfImageExists('http://localhost:5000/picture')
+      },500)
     },
     beforeUnmount() {
         clearInterval(this.timerID)
