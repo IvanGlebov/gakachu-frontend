@@ -36,7 +36,6 @@ export default {
     font-size: 30px;
   }
   .qrCode {
-    width: 700px;
     max-height: 500px;
   }
   .submitButton {

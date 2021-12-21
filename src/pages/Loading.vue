@@ -25,18 +25,21 @@ export default {
     },
     methods: {
         startWaterfall() {
-            this.timerID =  setInterval(() => {
-                axios({
-                    method: 'GET',
-                    url: 'http://localhost:5000/status'
-                })
-                .then((res) => {
+          setTimeout(() => {
+            this.timerID = setInterval(() => {
+              axios({
+                method: 'GET',
+                url: 'http://localhost:5000/status'
+              })
+                  .then((res) => {
                     if (res.data.status === 'available'){
-                        clearInterval(this.timerID)
-                        window.location.href='/drawing-finished'
+                      clearInterval(this.timerID)
+                      window.location.href='/drawing-finished'
                     }
-                })
-            }, 1000)
+                  })
+            }, 5000)
+          }, 10000)
+
         },
         checkIfImageExists(url) {
           const img = new Image()
@@ -80,7 +83,8 @@ export default {
       border: none;
     }
     .currImage {
-      width: 700px;
-      max-height: 500px;
+      max-width: 700px;
+      height: auto;
+      max-height: 35vh;
     }
 </style>
